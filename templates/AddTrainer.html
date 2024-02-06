@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'adminsidebar.html' %}
+
+  <main id="main" class="main">
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">TRAINER DETAILS</h5>
+
+              <!-- General Form Elements -->
+              <form action="/saveTrainer/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="Name">
+                  </div>
+                </div>
+                  <div class="row mb-3">
+                  <label for="inputFile" class="col-sm-2 col-form-label">Image</label>
+                  <div class="col-sm-10">
+                    <input type="file" class="form-control" id="formfile" name="images">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" name="email">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" name="Password">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputNumber" class="col-sm-2 col-form-label">Contact</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control" name="phone">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Address</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="Address">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Gender</label>
+                  <div class="col-sm-10">
+<select class="form-control"  name="Gender">
+    <option selected></option>
+   <option>Male</option>
+   <option>Female</option>
+   <option>Other</option>
+</select>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label for="inputDate" class="col-sm-2 col-form-label">DOB</label>
+                  <div class="col-sm-10">
+                    <input type="date" class="form-control" name="date">
+                  </div>
+                </div>
+                  <div class="row mb-3">
+                  <label for="inputNumber" class="col-sm-2 col-form-label">Salary</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control" name="sal">
+                  </div>
+                </div>
+
+
+                <div class="row mb-3">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                  </div>
+                </div>
+
+
+
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
+
+</body>
+</html>

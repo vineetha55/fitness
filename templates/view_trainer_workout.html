@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+{% include 'Trainersidebar.html'%}
+<div class="container" style="margin-top:10px;padding:10px;">
+ <div class="card p-3">
+      <h3>Week1</h3>
+        {% for i in data1 %}
+
+            {% if i.week == "week1" %}
+
+
+
+<h4>Ex.Name:{{i.excname}}</h4>
+            <h4>Repetition:{{i.reps}}</h4>
+
+
+
+    {% endif %}
+         {% endfor %}
+     </div>
+     <div class="card p-3">
+          <h3>Week2</h3>
+        {% for i in data1 %}
+     {% if i.week == "week2" %}
+<h4>Ex.Name:{{i.excname}}</h4>
+            <h4>Repetition:{{i.reps}}</h4>
+
+
+    {% endif %}
+     {% endfor %}
+           </div>
+          <div class="card p-3">
+          <h3>Week3</h3>
+        {% for i in data1 %}
+     {% if i.week == "week3" %}
+
+<h4>Ex.Name:{{i.excname}}</h4>
+            <h4>Repetition:{{i.reps}}</h4>
+
+    {% endif %}
+         {% endfor %}
+                </div>
+          <div class="card p-3">
+          <h3>Week4</h3>
+           {% for i in data1 %}
+     {% if i.week == "week4" %}
+
+<h4>Ex.Name:{{i.excname}}</h4>
+            <h4>Repetition:{{i.reps}}</h4>
+
+
+    {% endif %}
+
+     {% endfor %}
+                </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'Trainersidebar.html' %}
+
+  <main id="main" class="main">
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Schedule Details</h5>
+
+              <!-- General Form Elements -->
+              <form  action="/SaveSchedule/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">Member name</label>
+                   <div class="col-sm-10">
+                    <select class="form-control" aria-label="Default select example" name="name">
+                      <option selected>select</option>
+                      {% for i in obj %}
+
+                      <option value="{{i.id}}">{{i.memberid.first_name}}</option>
+                     {% endfor %}
+                    </select>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputTime" class="col-sm-2 col-form-label"> Start Time</label>
+                  <div class="col-sm-10">
+                    <input type="time" class="form-control" name="start">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputTime" class="col-sm-2 col-form-label"> End Time</label>
+                  <div class="col-sm-10">
+                    <input type="time" class="form-control" name="end">
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
+</body>
+</html>

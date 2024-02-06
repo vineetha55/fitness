@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <style>
+    /* Add your custom styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      padding: 20px;
+      width:50%;
+    }
+
+    .card h1 {
+      color: black;
+      font-size: 27px;
+      margin-top: 0;
+    }
+
+    .card h5 {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .card strong {
+      display: inline-block;
+      width: 250px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+{% include 'memberindex.html' %}
+ <div class="container mt-5">
+     {% if data1 or data2 %}
+           <h1 align="center" style="color:red; text-shadow:4px 4px 5px red;">Medical and Workout Report</h1>
+
+      <div class="row mb-3">
+    {% for data in data1 %}
+      <div class="card col-sm-5 m-2">
+        <h3>{{data.month}} &nbsp;&nbsp;&nbsp; Report[2023]</h3>
+          <br>
+        <h5><strong>Name:</strong> {{data.name}}</h5>
+        <h5><strong>Email:</strong> {{data.email}}</h5>
+        <h5><strong>Phone:</strong> {{data.health_id.memberid.Contact}}</h5>
+        <h5><strong>Month:</strong> {{data.month}}</h5>
+        <h5><strong>Previous Height:</strong> {{data.previous_height}}</h5>
+        <h5><strong>Current Height:</strong> {{data.current_height}}</h5>
+        <h5><strong>Previous Weight:</strong> {{data.previous_weight}}</h5>
+        <h5><strong>Current Weight:</strong> {{data.current_weight}}</h5>
+        <h5><strong>Medical Examination:</strong> {{data.medical_exam}}</h5>
+        <h5><strong>Medical Test:</strong> {{data.medical_test}}</h5>
+        <h5><strong>Overall Condition:</strong> {{data.overall_condition}}</h5>
+        <h5><strong>Instructions:</strong> {{data.instructions}}</h5>
+        <h5><strong> Doctor Signature :</strong><img src="{{data.signature}}" width="70"></h5>
+      </div>
+    {% endfor %}
+
+
+
+    {% for data in data2 %}
+
+      <div class="card col-sm-5 m-2">
+        <h3>{{data.month}} &nbsp;&nbsp;&nbsp; Report[2023]</h3>
+          <br>
+        <h5><strong>Trainer Name:</strong> {{data.Trainer_id.trainer_Name}}</h5>
+        <h5><strong>Month:</strong> {{data.month}}</h5>
+        <h5><strong>Total Workout:</strong> {{data.Total_Workout}}</h5>
+        <h5><strong>Completed Work out:</strong> {{data.Completed_Work_out}}</h5>
+        <h5><strong>Pending Workout:</strong> {{data.Pending_Workout}}</h5>
+        <h5><strong>Total Time Taken:</strong> {{data.Total_Time_Taken}}</h5>
+        <h5><strong>Performance:</strong> {{data.performance}}</h5>
+      </div>
+    {% endfor %}
+      </div>
+  </div>
+     {% else %}
+     <h3>No matching records</h3>
+     {% endif %}
+
+</body>
+</html>

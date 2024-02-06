@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'Trainersidebar.html' %}
+
+  <main id="main" class="main">
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">DietPlan DETAILS</h5>
+
+              <!-- General Form Elements -->
+              <form action="/SaveDietPlan/" method="POST">{% csrf_token %}
+                  <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label"> Member Name</label>
+                                    <div class="col-sm-10">
+                                <select class="form-control" aria-label="Default select example" name="name">
+                                        <option selected>select</option>
+                                  {% for i in data %}
+                                     <option  value="{{i.memberid.id}}">{{i.memberid.first_name}}</option>
+                                  {% endfor %}
+                                    </select>
+                                    </div>
+                            </div>
+                 <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">week</label>
+                   <div class="col-sm-10">
+                    <select class="form-control" aria-label="Default select example" name="week">
+                      <option selected>select</option>
+                      <option value="week1">week1</option>
+                      <option value="week2">week2</option>
+                      <option value="week3">week3</option>
+                      <option value="week4">week4</option>
+                    </select>
+                  </div>
+                </div>
+                  <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">week Days</label>
+                   <div class="col-sm-10">
+                    <select class="form-control" aria-label="Default select example" name="weekdays">
+                      <option selected>select</option>
+                      <option value="Monday">Monday</option>
+                      <option value="Tuesday">Tuesday</option>
+                      <option value="Wednesday">Wednesday</option>
+                      <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                      <option value="Saturday">Saturday</option>
+                      <option value="Sunday">Sunday</option>
+
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">BreakFast</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="brk">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Lunch</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="lun">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Snack</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="sna">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">dinner</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="din">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                  </div>
+                </div>
+
+
+
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
+
+</body>
+</html>

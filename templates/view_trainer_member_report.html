@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'Trainersidebar.html' %}
+
+  <main id="main" class="main">
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+{% if messages %}
+            {% for i in messages %}
+            <h3 style="color:red;">{{i}}</h3>
+            {% endfor %}
+            {% endif %}
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Members</h5>
+
+              <!-- General Form Elements -->
+              <form  action="/view_trainer_member_report1/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+                <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">Members(Select and View the Report)</label>
+                   <div class="col-sm-10">
+                    <select class="form-control" aria-label="Default select example" name="member" required>
+
+                      {% for i in data%}
+
+                      <option value="{{i.memberid.id}}">{{i.memberid.first_name}}</option>
+                     {% endfor %}
+                    </select>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'adminsidebar.html' %}
+<div class="main-panel">
+       <div class="content-wrapper">
+         <div class="row">
+           <div class=" grid-margin stretch-card">
+             <div class="card">
+               <div class="card-body">
+                 <h4 class="card-title">Member Payment  Details</h4>
+                 <p class="card-description">
+
+                 </p>
+                 <div class="table-responsive">
+                   <table class="table">
+                     <thead>
+                       <tr>
+                           <th>Member Id</th>
+                           <th>Name</th>
+                           <th>Package Type</th>
+                            <th>Package Duration</th>
+                           <th>Total Amount</th>
+                           <th>Advance Amount</th>
+                           <th>balance amount</th>
+                           <th> Payment Date</th>
+                           <th> Payment time</th>
+                           <th>Date of Joining</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                     {% for i in data %}
+                       <tr>
+                         <td>{{forloop.counter}}</td>
+                         <td>{{i.memberid.first_name}}  {{i.memberid.last_name}}</td>
+                            <td>{{i.memberid.package_type.package_type}}</td>
+                           <td>{{i.memberid.package_type.package_duration}}</td>
+                          <td>{{i.memberid.package_type.package_price}}</td>
+                         <td>{{i.advanceamount}}</td>
+                         <td>{{i.balanceamount}}</td>
+                           <td>{{i.paymentdate}}</td>
+                           <td>{{i.paymenttime}}</td>
+                            <td>{{i.memberid.DateOfJoining}}</td>
+
+                       </tr>
+                     {% endfor %}
+                     </tbody>
+                   </table>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+
+</body>
+</html>

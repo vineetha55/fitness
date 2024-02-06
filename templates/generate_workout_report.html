@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'Trainersidebar.html' %}
+ <main id="main" class="main">
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Generate Monthly Report</h5>
+
+              <!-- General Form Elements -->
+             <form action="/save_monthly_report/{{data.id}}" method="POST">{% csrf_token %}
+                     <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">Member Name</label>
+                   <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="member_name" value="{{data.first_name}}">
+
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Month</label>
+                  <div class="col-sm-10">
+                     <select class="form-control" name="month" id="month">
+                          <option>January</option>
+                           <option>February</option>
+                           <option>March</option>
+                          <option>April</option>
+                          <option>May</option>
+                           <option>June</option>
+                           <option>July</option>
+                           <option>August</option>
+                           <option>September</option>
+                           <option>October</option>
+                           <option>November</option>
+                           <option>December</option>
+
+
+                      </select>
+                  </div>
+                </div>
+
+                  <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">Total Workout</label>
+                   <div class="col-sm-10">
+                                    <input type="number" class="form-control" name="total_workout" id="total_workout">
+
+                  </div>
+                </div>
+               <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">Completed Workout</label>
+                   <div class="col-sm-10">
+                                    <input type="number" class="form-control" name="completed" id="completed">
+
+                  </div>
+                </div>
+                 <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">Pending Workout</label>
+                   <div class="col-sm-10">
+                                    <input type="number" class="form-control" name="pending_workout" id="pending">
+
+                  </div>
+                </div>
+                 <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">Time Taken</label>
+                   <div class="col-sm-10">
+                                    <input type="number" class="form-control" name="time_taken" id="time">
+
+                  </div>
+                </div>
+                  <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">Overall Performance</label>
+                   <div class="col-sm-10">
+                                    <select name="performance" class="form-control">
+                                        <option>Excellent</option>
+                                        <option>Verygood</option>
+                                        <option>Good</option>
+                                        <option>Average</option>
+                                          <option>Just Quit</option>
+                                    </select>
+
+                  </div>
+                </div>
+                  <div class="row mb-3">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+$("#month").change(function(){
+var month=$("#month").val();
+$.ajax({
+url:'/autofill_report/',
+ data: {
+      'month': month,
+      'm_id': {{data.id}},
+    },
+  success: function(response) {
+      var tws = response.tws;
+      var pws = response.pws;
+      var cws = response.cws;
+      var tts = response.tts;
+
+      $("#total_workout").val(tws);
+      $("#completed").val(cws);
+      $("#pending").val(pws);
+       $("#time").val(tts);
+      }
+});
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Diet Plan Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 7px;
+            text-align: center;
+
+        }
+
+        th , td {
+            background-color: #f2f2f2;
+
+        }
+    </style>
+</head>
+
+<body>
+
+{% include 'memberindex.html' %}
+    <h1><p style="color:#ffffff">Diet Plan</p></h1>
+    <table>
+        <tr>
+            <th>Diet ID</th>
+            <th>Trainer Name</th>
+            <th>Week</th>
+            <th>Day</th>
+            <th>Breakfast</th>
+            <th>Lunch</th>
+            <th>Snack</th>
+            <th>Dinner</th>
+        </tr>
+        {% for plan in data %}
+        <tr>
+            <td>{{ forloop.counter}}</td>
+            <td>{{plan.trainer_id.trainer_Name}}</td>
+            <td>{{plan.week}}</td>
+            <td>{{plan.day}}</td>
+            <td>{{plan.brkfst}}</td>
+            <td>{{plan.lunch}}</td>
+            <td>{{plan.snack}}</td>
+            <td>{{plan.dinner}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        tr.v{
+        background-color:black;
+        color:white;
+        width:70%;
+        }
+
+    </style>
+    <link rel="stylesheet" href="{% static 'star/css/style.css' %}">
+    <!--Only for demo purpose - no need to add.-->
+    <link rel="stylesheet" href="{% static 'star/css/demo.css' %}" />
+</head>
+<body>
+{% include 'adminsidebar.html' %}
+<section id="center" class="center_home" style="margin-top:100px;">
+<div class="container">
+ <main id="main" class="main">
+<div class="main-panel">
+       <div class="content-wrapper">
+         <div class="row">
+           <div class=" grid-margin stretch-card">
+             <div class="card">
+               <div class="card-body">
+                 <h4 class="card-title">User Feebacks Details</h4>
+                 <p class="card-description">
+
+                 </p>
+                 <div class="table-responsive">
+                   <table class="table">
+                     <thead>
+                       <tr class="v">
+                           <th>sl.No</th>
+                           <th>Name</th>
+                         <th>EmailAddress</th>
+                          <th>message</th>
+
+<th>Action</th>
+                           <th>Rating</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                     {% for i in a %}
+                       <tr>
+                         <td>{{forloop.counter}}</td>
+                         <td>{{i.Name}}</td>
+                         <td>{{i.Email}}</td>
+                           <td>{{i.Message}}</td>
+                           {% if i.star1 == "1" %}
+                             <td>
+		  <span class="star-rating"style="background-color:#f2f6f8;">
+  <input type="radio" name="rating1" value="1"  checked><i></i>
+  <input type="radio" name="rating1" value="2"><i></i>
+  <input type="radio" name="rating1" value="3"><i></i>
+  <input type="radio" name="rating1" value="4"><i></i>
+  <input type="radio" name="rating1" value="5"><i></i>
+          </span></td>
+                             {% elif i.star1 == "2" %}
+                           <td>
+
+
+		  <span class="star-rating"style="background-color:#f2f6f8;">
+  <input type="radio" name="rating1" value="1" checked><i></i>
+  <input type="radio" name="rating1" value="2" checked><i></i>
+  <input type="radio" name="rating1" value="3"><i></i>
+  <input type="radio" name="rating1" value="4"><i></i>
+  <input type="radio" name="rating1" value="5"><i></i>
+          </span></td>
+                                                      {% elif i.star1 == "3" %}
+                           <td>
+
+		  <span class="star-rating"style="background-color:#f2f6f8;">
+  <input type="radio" name="rating1" value="1" checked><i></i>
+  <input type="radio" name="rating1" value="2" checked><i></i>
+  <input type="radio" name="rating1" value="3" checked><i></i>
+  <input type="radio" name="rating1" value="4" disabled><i></i>
+  <input type="radio" name="rating1" value="5" disabled><i></i>
+          </span></td>
+
+
+                                                      {% elif i.star1 == "4" %}
+  <td>
+		  <span class="star-rating"style="background-color:#f2f6f8;">
+  <input type="radio" name="rating1" value="1" checked ><i></i>
+  <input type="radio" name="rating1" value="2" checked><i></i>
+  <input type="radio" name="rating1" value="3" checked><i></i>
+  <input type="radio" name="rating1" value="4" checked><i></i>
+  <input type="radio" name="rating1" value="5" ><i></i>
+          </span></td>
+
+                                                      {% elif i.star1 == "5" %}
+<td>
+                       		  <span class="star-rating"style="background-color:#f2f6f8;">
+  <input type="radio" name="rating1" value="1" checked ><i></i>
+  <input type="radio" name="rating1" value="2" checked><i></i>
+  <input type="radio" name="rating1" value="3" checked><i></i>
+  <input type="radio" name="rating1" value="4" checked><i></i>
+  <input type="radio" name="rating1" value="5" checked><i></i>
+          </span></td>
+{% endif %}
+
+
+                       </tr>
+                     {% endfor %}
+                     </tbody>
+                   </table>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+</div>
+ </main>
+</div>
+</section>
+</body>
+</html>
+
+</body>
+</html>

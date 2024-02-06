@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'memberindex.html' %}
+ <div class="container-fluid bg-light mt-5">
+  <div class="container">
+    <h2>Gym Member Health Details</h2>
+    <form action="/save_health_details/" method="POST">{% csrf_token %}
+
+      <div class="form-group">
+        <label for="weight">Weight (in kg):</label>
+        <input type="number" class="form-control" id="weight" placeholder="Enter your weight" name="weight">
+      </div>
+      <div class="form-group">
+        <label for="height">Height (in cm):</label>
+        <input type="number" class="form-control" id="height" placeholder="Enter your height" name="height">
+      </div>
+          <div class="form-group">
+        <label for="weight">Bp</label>
+            <select name="bp" class="form-control">
+              <option>Normal</option>
+              <option>Low</option>
+              <option>High</option>
+            </select>
+      </div>
+      <div class="row">
+      <div class="form-group col-sm-6">
+        <label for="height">Do you have Heart Related disease</label>
+      </div>
+        <div class="form-group col-sm-6">
+        <input type="radio"  id="radio"value="Yes" name="heart_disease">Yes
+         <input type="radio"  id="radio"value="No"  name="heart_disease">No
+        </div>
+     </div>
+        <div class="row">
+      <div class="form-group col-sm-6">
+        <label for="height">Do you Lose balance because of  dizziness</label>
+      </div>
+        <div class="form-group col-sm-6">
+        <input type="radio"  id="radio"value="Yes" name="dizziness">Yes
+         <input type="radio"  id="radio"value="No" name="dizziness">No
+        </div>
+     </div>
+        <div class="row">
+      <div class="form-group col-sm-6">
+        <label for="height">Do you have Bone or Joint Problem</label>
+      </div>
+        <div class="form-group col-sm-6">
+        <input type="radio"  id="radio"value="Yes" name="joint_problem">Yes
+         <input type="radio"  id="radio"value="No" name="joint_problem">No
+        </div>
+     </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

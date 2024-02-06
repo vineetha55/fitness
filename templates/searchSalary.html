@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'adminsidebar.html' %}
+<div class="main-panel">
+       <div class="content-wrapper">
+         <div class="row">
+           <div class=" grid-margin stretch-card">
+             <div class="card">
+               <div class="card-body">
+                 <h4 class="card-title"> Trainer Salary details</h4>
+                 <p class="card-description">
+                 </p>
+                 <div class="table-responsive">
+                   <table class="table">
+                     <thead>
+                       <tr>
+                         <th>Trainer id</th>
+                         <th>Trainer Name</th>
+                         <th>Total leave</th>
+                         <th>Basic pay</th>
+                         <th>Total Salary </th>
+
+                        </tr>
+                     </thead>
+                     <tbody>
+                     {% for i in data %}
+                       <tr>
+                         <td>{{forloop.counter}}</td>
+                         <td>{{i.trainer_Name}}</td>
+                          <td>{{i.total_leave}}</td>
+                          <td>{{i.basic_pay}}</td>
+                          <td>{{i.total_salary}}</td>
+
+                       </tr>
+                     {% endfor %}
+                     </tbody>
+                   </table>
+                 </div>
+               </div>
+             </div>
+               <div class="card mt-5">
+               <div class="card-body">
+                 <h4 class="card-title"> Doctor Salary  details</h4>
+                     <div class="table-responsive">
+                   <table class="table">
+                     <thead>
+                       <tr>
+                         <th>Doctor id</th>
+                         <th>Doctor name</th>
+                           <th>Total leave</th>
+                         <th>Basic pay</th>
+                         <th>Total Salary </th>
+
+                        </tr>
+                     </thead>
+                     <tbody>
+                     {% for i in data1 %}
+                       <tr>
+                         <td>{{forloop.counter}}</td>
+                         <td>{{i.doctor_Name}}</td>
+                           <td>{{i.total_leave}}</td>
+                          <td>{{i.basic_pay}}</td>
+                          <td>{{i.total_salary}}</td>
+
+                       </tr>
+                     {% endfor %}
+                   </table>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+</div>
+</body>
+</html>

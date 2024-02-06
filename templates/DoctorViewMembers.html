@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js" integrity="sha512-F636MAkMAhtTplahL9F6KmTfxTmYcAcjcCkyu0f0voT3N/6vzAuJ4Num55a0gEJ+hRLHhdz3vDvZpf6kqgEa5w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+{% include 'Doctorsidebar.html' %}
+<div class="main-panel">
+       <div class="content-wrapper">
+         <div class="row">
+           <div class=" grid-margin stretch-card">
+             <div class="card">
+               <div class="card-body">
+                 <h4 class="card-title">  Member Details</h4>
+                 <p class="card-description">
+
+                 </p>
+                 <div class="table-responsive">
+                   <table class="table table-responsive">
+                     <thead>
+                       <tr>
+
+                           <th>Member id</th>
+                           <th>First Name</th>
+                           <th>Last Name</th>
+
+                           <th>Gender </th>
+                           <th>Age</th>
+
+                           <th>Contact</th>
+
+                         <th>Email</th>
+                         <th>Date Of Joining</th>
+                         <th>Package type</th>
+                            <th>Action</th>
+                           <th>Action</th>
+
+                        </tr>
+                     </thead>
+                     <tbody>
+                     {% for i in data %}
+                       <tr>
+                           <td>{{forloop.counter}}</td>
+                           <td>{{i.first_name}}</td>
+                           <td>{{i.last_name}}</td>
+
+                           <td>{{i.gender}}</td>
+                           <td>{{i.Age}}</td>
+
+                           <td>{{i.Contact}}</td>
+
+                           <td>{{i.email}}</td>
+                           <td>{{i.DateOfJoining}}</td>
+                           <td>{{i.package_type.package_type}}</td>
+
+<td><a href="/view_doctor_health_details/{{i.id}}" class="btn btn-success">View Health Details</a></td>
+                           <td><a href="/view_doctor_member_report/{{i.id}}" class="btn btn-success">View Report</a></td>
+                       </tr>
+                     {% endfor %}
+                     </tbody>
+                   </table>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+
+</body>
+</html>

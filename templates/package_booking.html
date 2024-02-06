@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'memberindex.html' %}
+ <div class="container-fluid bg-light mt-5">
+  <div class="container">
+    <h2>Gym Member Package Booking</h2>
+    <form action="/save_package_booking/" method="POST">{% csrf_token %}
+
+      <div class="form-group">
+        <label for="name">Member Name</label>
+        <input type="text" class="form-control" id="name" value="{{m.first_name}}" name="name">
+      </div>
+      <div class="form-group">
+        <label for="height">Select Package to view Amount</label>
+           <select name="package" class="form-control" id="pack">
+               <option>Select</option>
+               {% for i in data %}
+              <option value="{{i.id}}">{{i.package_type}}</option>
+            {% endfor %}
+            </select>
+      </div>
+
+    <label for="balance">Total Package Price:</label>
+        <input type="text" id="totalamount" name="totalamount" readonly>
+
+        <label for="balance">Duration:</label>
+        <input type="number" id="duration" name="duration" readonly>
+
+        <label for="fee">Monthly Fee:</label>
+        <input type="number" id="fee" name="monthlyPayment" readonly>
+        <div class="form-group">
+        <label for="advanceamount">Advance amount</label>
+            <select name="advanceamount" class="form-control">
+              <option>1000</option>
+              <option>1500</option>
+              <option>500</option>
+            </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+    $("#pack").change(function(){
+    p=$("#pack").val();
+    $.ajax({
+    url:"/get_pack_details/",
+    data:{
+    p:p
+    },
+    success:function(response){
+    price=response.price;
+    duration=response.duration;
+    $("#totalamount").val(price);
+    $("#duration").val(duration);
+    $("#fee").val(1000);
+    }
+    });
+    });
+</script>
+</body>
+</html>

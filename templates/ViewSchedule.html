@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'Trainersidebar.html' %}
+<div class="main-panel">
+       <div class="content-wrapper">
+         <div class="row">
+           <div class=" grid-margin stretch-card">
+             <div class="card">
+               <div class="card-body">
+                 <h4 class="card-title">Schedule Details</h4>
+                 <p class="card-description">
+
+                 </p>
+                 <div class="table-responsive">
+                   <table class="table">
+                     <thead>
+                       <tr>
+                           <th>schedule Id</th>
+                           <th>Member Name</th>
+                           <th> Start Time</th>
+                           <th>End Time</th>
+                           <th>Action</th>
+                           <th>Action</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                     {% for i in data %}
+                       <tr>
+                         <td>{{forloop.counter}}</td>
+                         <td>{{i.memberassigned.memberid.first_name}}</td>
+                         <td>{{i.StartTime}}</td>
+                         <td>{{i.EndTime}}</td>
+
+                    <td><a href="/EditSchedule/{{i.id}}">Edit</a></td>
+                    <td><a href="/DeleteSchedule/{{i.id}}">Delete</a></td>
+
+                       </tr>
+                     {% endfor %}
+                     </tbody>
+                   </table>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+
+</body>

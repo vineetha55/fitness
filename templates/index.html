@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Activitar Template">
+    <meta name="keywords" content="Activitar, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Activitar | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="logo">
+                <a href="/index">
+                    <img src="{% static 'img/logo1.png' %}" alt="">
+                </a>
+            </div>
+            <div class="top-social">
+                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+            <div class="container">
+                <div class="nav-menu">
+                    <nav class="mainmenu mobile-menu">
+                        <ul>
+                            <li class="active"><a href="/index">Home</a></li>
+                            <li><a href="/aboutus">About us</a></li>
+
+                            <li><a href="/gallery">Gallery</a></li>
+                            <li><a href="/blog">Blog</a>
+                                <ul class="dropdown">
+
+                                    <li><a href="/blogsingle">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/contact">Contacts</a></li>
+                            <li><a href="/adminlogin">Log in</a></li>
+                            <li><a href="/memberregistration">Register</a></li>
+                            <li><a href="/AdminLog">ADMIN</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+        <div class="hero-items owl-carousel">
+            <div class="single-hero-item set-bg" data-setbg="{% static 'img/hero-slider/hero-1.jpg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="hero-text">
+                                <h2>Join Us Now</h2>
+                                <h1>FITNESS SPOT</h1>
+                                <!--<a href="#" class="primary-btn">Read More</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-item set-bg" data-setbg="{% static 'img/hero-slider/hero-2.jpg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="hero-text">
+                                <h2>Join Us Now</h2>
+                                <h1>FITNESS  SPOT</h1>
+                                <!--<a href="#" class="primary-btn">Read More</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-item set-bg" data-setbg="{% static 'img/hero-slider/hero-3.jpg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="hero-text">
+                                <h2>Join Us Now</h2>
+                                <h1>FITNESS SPOT</h1>
+                               <!-- <a href="#" class="primary-btn">Read More</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+
+    <!-- Feature Section Begin -->
+    <section class="feature-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-item set-bg" data-setbg="{% static 'img/feature/feature-1.jpg' %}">
+                        <h3>GROUP CLASSES</h3>
+                       <!-- <p>The Sopranos manages to address the biases<br /> and benefits of therapy</p>
+                        <a href="#" class="primary-btn f-btn">Read More</a>-->
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-item set-bg" data-setbg="{% static 'img/feature/feature-2.jpg' %}">
+                        <h3>PERSONAL TRAINING</h3>
+                        <!--Strep throat is very common during the flu<br /> seasons and it can be preceded</p>
+                        <a href="#" class="primary-btn f-btn">Read More</a>-->
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-item set-bg" data-setbg="{% static 'img/feature/feature-3.jpg' %}">
+                        <h3>Sports Nutrition</h3>
+                        <!--<p>A Human Being’s right to life implies his right to<br /> have the free and unrestricted</p>
+                        <a href="#" class="primary-btn f-btn">Read More</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feature Section End -->
+
+    <!-- About Section Begin -->
+    <section class="home-about spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <h2>WELCOME TO FITZONE</h2>
+                        <p class="short-details">" FITZONE IS A PLACE WHERE  YOU CAN STEP TOWARDS YOUR  DREAM "</p>
+                        <p class="long-details"> SUCCESS IS'NT REALLY THAT DIFFICULT  . THERE IS NO SHORTCUT , IT TAKES TIME TO CREATE A BETTER , STRONGER  VERSION OF YOURSELF.</p>
+                        <!--<a href="#" class="primary-btn about-btn">Learn More</a>-->
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <img src="{% static 'img/home-about.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Classes Section Begin -->
+    <section class="classes-section">
+        <div class="class-title set-bg" data-setbg="{% static 'img/classes-title-bg.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 m-auto text-center">
+                        <div class="section-title pl-lg-4 pr-lg-4 pl-0 pr-0">
+                            <h2>Choose Your Program</h2>
+                            <p>Our experts can help you discover new training techniques and exercises that offer a dynamic and efficient full-body workout.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="classes-item set-bg" data-setbg="{% static 'img/classes/class-1.jpg' %}">
+                        <h4>BODY BUILDING</h4>
+                        <!--<p>Sufferers around the globe will be happy to hear that there are sleep apnea remedies.</p>
+                        <a href="#" class="primary-btn class-btn">Read More</a>-->
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="classes-item set-bg" data-setbg="{% static 'img/classes/class-2.jpg' %}">
+                        <h4>WEIGHT GAIN & LOSS</h4>
+                         <!--<p>The oil, also called linseed oil, has many industrial uses – it is an important ingredient
+                        </p>
+                        <a href="#" class="primary-btn class-btn">Read More</a>-->
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="classes-item set-bg" data-setbg="{% static 'img/classes/class-3.jpg' %}">
+                        <h4>MUSCLE GAINING</h4>
+                         <!--<p>It is a very common occurrence like cold or fever depending upon your lifestyle. </p>
+                        <a href="#" class="primary-btn class-btn">Read More</a>-->
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="classes-item set-bg" data-setbg="{% static 'img/classes/class-4.jpg' %}">
+                        <h4>FAT LOSS, etc....</h4>
+                        <P> YOU CAN CHOOSE YOUR PROGRAM </P>
+                         <!-- <p>The procedure is usually a preferred alternative to photorefractive keratectomy,</p>
+                        <a href="#" class="primary-btn class-btn">Read More</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Classes Section End -->
+
+    <!-- Class Time Section Begin -->
+
+    <!-- Class Time Section End -->
+
+    <!-- Price Plan Section Begin -->
+    <section class="price-section spad set-bg" data-setbg="{% static 'img/price-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>CHOOSE YOUR PRICING PLAN</h2>
+                        <p>We offer you a better pricing  and package plan .</p>
+                    </div>
+                    <div class="toggle-option">
+                        <ul>
+                            <li><h2>Monthly</h2></li>
+                            <li>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </li>
+                            <!--<li>Years</li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="single-price-plan">
+                        <h4>Normal</h4>
+                        <div class="price-plan">
+                            <h2> 1000 <span>Rs </span></h2>
+                            <p>Monthly</p>
+                        </div>
+                        <ul>
+                            <li>Total pricing  : Rs 3000</li>
+                            <li>Duration :3 Month</li>
+                            <li>Unlimited access to the gym</li>
+                            <li>1 classes per week</li>
+                            <li>FREE drinking package</li>
+                            <li>1 Free personal training</li>
+                        </ul>
+                        <a href="#" class="primary-btn price-btn">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-price-plan">
+                        <h4>Standard</h4>
+                        <div class="price-plan">
+                            <h2> 1000 <span>Rs </span></h2>
+                            <p>Monthly</p>
+                        </div>
+                        <ul>
+                            <li>Total pricing : Rs 6000</li>
+                            <li>Duration :6 Month</li>
+                            <li>Unlimited access to the gym</li>
+                            <li>2 classes per week</li>
+                            <li>FREE drinking package</li>
+                            <li>2 Free personal training</li>
+                        </ul>
+                        <a href="#" class="primary-btn price-btn">Get Started</a>
+                        <div class="tic-text">
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-price-plan">
+                        <h4>Permium</h4>
+                        <div class="price-plan">
+                            <h2> 1000 <span>Rs </span></h2>
+                            <p>Monthly</p>
+                        </div>
+                        <ul>
+                            <li>Total pricing  : Rs 12000</li>
+                            <li>Duration :12 Month</li>
+                            <li>Unlimited access to the gym</li>
+                            <li>6 classes per week</li>
+                            <li>FREE drinking package</li>
+                            <li>5 Free personal training</li>
+                        </ul>
+                        <a href="#" class="primary-btn price-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Price Plan Section End -->
+
+    <!-- Choseus Section Begin -->
+    <section class="chooseus-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Why People Choose Us</h2>
+                        <p>Our experts and latest sports equipment are the winning combination.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="choose-item">
+                        <img src="{% static 'img/icons/chose-icon-1.png' %}" alt="">
+                        <h5>Support 24/24</h5>
+                        <p>Our Experts Will Be available at any time according to member needs. </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="choose-item">
+                        <img src="{% static 'img/icons/chose-icon-2.png' %}" alt="">
+                        <h5>Our trainer</h5>
+                        <p>Highly Qualified Trainers Are Available in Our FitZone .</p>
+                    </div>
+                </div>
+                <!--<div class="col-lg-4 col-sm-6">
+                    <div class="choose-item">
+                        <img src="{% static 'img/icons/chose-icon-3.png' %}" alt="">
+                        <h5>Personalized sessions</h5>
+                        <p>To succeed at any endeavor, you must stay the course…no matter what the cost! Here are some
+                            surefire tips to help you on your journey.</p>
+                    </div>
+                </div>-->
+                <div class="col-lg-4 col-sm-6">
+                    <div class="choose-item">
+                        <img src="{% static 'img/icons/chose-icon-4.png' %}" alt="">
+                        <h5>Our equipment</h5>
+                        <p>We Provide  Top Branded Equipments To Our Members Like Bowflex,TitanFitness , etc...</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="choose-item">
+                        <img src="{% static 'img/icons/chose-icon-5.png' %}" alt="">
+                        <h5>Classes daily</h5>
+                        <p>We Provide Daily Classes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="choose-item">
+                        <img src="{% static 'img/icons/chose-icon-6.png' %}" alt="">
+                        <h5>Focus on your health</h5>
+                        <p>Our Attractive Speciality , We Focus On Member Health.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Choseus Section End -->
+
+    <!-- Video Section Begin -->
+    <section class="video-section set-bg" data-setbg="{% static 'img/video-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="video-text">
+                        <h2>Gym In Dowtown KOTTAYAM</h2>
+                        <a href="https://www.youtube.com/watch?v=X_9VoqR5ojM" class="play-btn video-popup">
+                            <i class="fa fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Video Section End -->
+
+    <!-- Blog Section Begin -->
+    <section class="blog-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title">
+                        <h2>From Our Blog</h2>
+                        <p>List of all news and events that take place related to us</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row blog-gird">
+                <div class="grid-sizer"></div>
+                <div class="col-lg-4 col-md-6 grid-item">
+                    <div class="blog-item large-item set-bg" data-setbg="{% static 'img/blog/blog-1.jpg' %}">
+                        <a href="#" class="blog-text">
+                            <div class="categories"></div>
+                            <h5></h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grid-item">
+                    <div class="blog-item instagram-item">
+                        <a href="#" class="instagram-text">
+                            <div class="categories">FitZone <i class="fa fa-instagram"></i></div>
+                            <h5></h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grid-item">
+                    <div class="blog-item small-item set-bg" data-setbg="{% static 'img/blog/blog-2.jpg' %}">
+                        <a href="#" class="blog-text">
+                            <div class="categories"></div>
+                            <h5></h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grid-item">
+                    <div class="blog-item large-item xls-large set-bg" data-setbg="{% static 'img/blog/blog-3.jpg' %}">
+                        <a href="#" class="blog-text">
+                            <div class="categories"></div>
+                            <h5></h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grid-item">
+                    <div class="blog-item large-item set-bg" data-setbg="{% static 'img/blog/blog-4.jpg' %}">
+                        <a href="#" class="blog-text">
+                            <div class="categories"></div>
+                            <h5></h5>
+                        </a>
+                        <div class="play-btn">
+                            <a href="https://www.youtube.com/watch?v=X_9VoqR5ojM" class="play-in-btn video-popup">
+                                <i class="fa fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grid-item">
+                    <div class="blog-item small-item set-bg" data-setbg="{% static 'img/blog/blog-5.jpg' %}">
+                        <a href="#" class="blog-text">
+                            <div class="categories">FitZone</div>
+                            <h5></h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Section End -->
+
+    <!-- Cta Section Begin -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="cta-text">
+                        <h3>GeT Started Today</h3>
+                        <p>New member special! RS 500  unlimited Gym for the first week and 50% of our member!</p>
+                    </div>
+                    <a href="/memberregistration" class="primary-btn cta-btn">register now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Cta Section End -->
+
+    <!-- Map Section Begin -->
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d188618.51311104256!2d-71.236572!3d42.381647!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1576756626784!5m2!1sen!2sbd" height="590" style="border: 0" allowfullscreen=""></iframe>
+        <div class="map-contact-detalis">
+            <div class="open-time">
+                <h5>Weekday:</h5>
+                <ul>
+                    <li>   Weekday: <span>           6:30AM - 11:00PM</span></li>
+                    <li>   Saturday:<span>                7:00AM - 9:00AM</span></li>
+                    <li>   Sunday:<span>               9:00AM - 9:00PM</span></li>
+                </ul>
+            </div>
+            <div class="map-contact-form">
+                <h5>Contact Us</h5>
+                <form action="#">
+                    <input type="text" placeholder="Name">
+                    <input type="text" class="phone" placeholder="Phone">
+                    <textarea placeholder="Message"></textarea>
+                    <button type="submit" class="site-btn">Submit Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Map Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-logo-item">
+                        <div class="f-logo">
+                            <a href="#"><img src="{% static 'img/logo1.png' %}" alt=""></a>
+                        </div>
+                        <p>Exercise not only changes your body , it changes your mind ,your Attitude and your Mood.</p>
+                        <div class="social-links">
+                            <h6>Follow us</h6>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="col-lg-3 offset-lg-1">
+                    <div class="footer-widget">
+                        <h5>Our Blog</h5>
+                        <div class="footer-blog">
+                            <a href="#" class="fb-item">
+                                <h6>Most people who work</h6>
+                                <span class="blog-time"><i class="fa fa-clock-o"></i> Jan 02, 2019</span>
+                            </a>
+                            <a href="#" class="fb-item">
+                                <h6>Freelance Design Tricks How </h6>
+                                <span class="blog-time"><i class="fa fa-clock-o"></i> Jan 02, 2019</span>
+                            </a>
+                            <a href="#" class="fb-item">
+                                <h6>have a computer at home have had </h6>
+                                <span class="blog-time"><i class="fa fa-clock-o"></i> Jan 02, 2019</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>-->
+                <div class="col-lg-2">
+                    <div class="footer-widget">
+                        <h5>Program</h5>
+                        <ul class="workout-program">
+                            <li><a href="#">Bodybuilding</a></li>
+                            <li><a href="#">Fat Loss</a></li>
+                            <li><a href="#">Streching</a></li>
+                            <li><a href="#">Weight Loss</a></li>
+                            <li><a href="#">etc...</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <h5>Get Info</h5>
+                        <ul class="footer-info">
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <span>Phone:</span>
+                                (+91) 9089765682
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope-o"></i>
+                                <span>Email:</span>
+                                fitzone@gmail.com
+                            </li>
+                            <li>
+                                <i class="fa fa-map-marker"></i>
+                                <span>Address</span>
+                                1st floor,kandathil, Kottayam,686521
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="ct-inside"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/mixitup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Payment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333333;
+        }
+
+        form {
+            width: 350px;
+            background-color: #ffffff;
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        select {
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Monthly Payment Form</h2>
+    <form action="/SaveMemberMonthlyPayment/{{pdata.id}}" method="POST">
+        {% csrf_token %}
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="first_name" value="{{data.first_name}}" readonly>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{data.email}}" readonly>
+
+        <label for="balance">Package type:</label>
+        <input type="text" id="" name="package_type" value="{{data.package_type.package_type}}" readonly>
+
+        <label for="balance">Total Package Price:</label>
+        <input type="text" id="" name="totalamount" value="{{data.package_type.package_price}}" readonly>
+
+        <label for="balance">Total Paid:</label>
+        <input type="text" id="" name="totalpaid" value="{{pdata.paid_amount}}" readonly>
+
+        <label for="balance">Balance Amount:</label>
+        <input type="number" id="balance" name="b" value="{{pdata.balanceamount}}" readonly>
+
+        <label for="fee">Monthly Fee:</label>
+        <input type="number" id="fee" name="monthlyPayment" value="{{pdata.monthlyPayment}}" readonly>
+
+        <label for="month"> Select Month:</label>
+        <select id="month" name="month" required>
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+        </select>
+
+        <label for="inputText" >Payment Method</label>
+        <input type="radio"    name="pay" value="upi">  UPI
+        <input type="radio"    name="pay" value="net_banking">Net banking
+        <input type="radio"    name="pay" value="card">Card
+
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+</html>

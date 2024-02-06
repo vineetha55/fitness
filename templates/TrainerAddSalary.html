@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "adminsidebar.html" %}
+  <main id="main" class="main">
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Salary Details</h5>
+
+              <!-- General Form Elements -->
+              <form action="/Trainersavesalary/{{data.id}}" method="POST"enctype="multipart/form-data">{%csrf_token%}
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Trainer Name</label>
+                  <div class="col-sm-10">
+                      <input type="text" class="form-control" name="Name" value="{{data.trainer_Name}}">
+                    </div>
+                  </div>
+                   <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">Month</label>
+                   <div class="col-sm-10">
+                    <select class="form-select" aria-label="Default select example" name="month" id="month">
+                      <option selected>select</option>
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                                  <option value="March">March</option>
+                      <option value="April">April</option>
+                                  <option value="May">May</option>
+                      <option value="June">June</option>
+                                  <option value="July">July</option>
+                      <option value="August">August</option>
+                                  <option value="September">September</option>
+                      <option value="October">October</option>
+                                  <option value="November">November</option>
+                      <option value="December">December</option>
+
+                    </select>
+                  </div>
+                </div>
+                 <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">Total Leave</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="t_leave" id="t_leave">
+                  </div>
+                </div>
+                     <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">Total Working Days</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="t_working" id="t_working">
+                  </div>
+                </div>
+                    <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">Basic Pay</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="basic_pay" value="{{data.trainer_Salary}}">
+                  </div>
+                </div>
+                         <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">Total Salary</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="t_salary" id="t_salary">
+                  </div>
+                </div>
+
+
+                <div class="row mb-3">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Pay</button>
+                  </div>
+                </div>
+
+
+
+
+
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+<script>
+$("#month").change(function(){
+m =$("#month").val();
+$.ajax({
+url:'/month_wise_leave/',
+data:{
+s_id:{{data.id}},
+m:m
+},
+success: function(response) {
+      var t_leave = response.t_leave;
+      var t_working = response.t_working;
+      var t_salary = response.t_salary;
+
+
+      $("#t_leave").val(t_leave);
+      $("#t_working").val(t_working);
+      $("#t_salary").val(t_salary);
+
+}
+
+});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'adminsidebar.html' %}
+
+  <main id="main" class="main">
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Doctor Details</h5>
+
+              <!-- General Form Elements -->
+              <form  action="/updateDoctor/{{data.id}}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="name"value="{{data.doctor_Name}}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" name="email" value="{{data.doctor_Email}}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputNumber" class="col-sm-2 col-form-label">Contact</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control" name="phone" value="{{data.doctor_Contact}}">
+                  </div>
+                </div>
+                    <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">Gender</label>
+                   <div class="col-sm-10">
+                    <select class="form-control" aria-label="Default select example" name="gender" value="{{data.doctor_Gender}}">
+                      <option selected>select</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Others">Other</option>
+
+                    </select>
+                  </div>
+                </div>
+
+
+                     <div class="row mb-3">
+                  <label for="inputNumber" class="col-sm-2 col-form-label">NameOfProof</label>
+                  <div class="col-sm-10">
+                    <select class="form-control" aria-label="Default select example" name="proofname" value="{{data.doctor_NameOfProof}}">
+                      <option selected>select</option>
+                      <option value="Aadharcard">Aadharcard</option>
+                      <option value="Pancard">Pancard</option>
+                      <option value="voterID">VoterID</option>
+                      <option value="DrivingLicense">Driving License</option>
+                      <option value="Passport">Passport</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputNumber" class="col-sm-2 col-form-label">ID Number</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="idnumber" value="{{data.doctor_ID_Number}}">
+                  </div>
+                </div>
+                  <div class="row mb-3">
+                  <label for="inputNumber" class="col-sm-2 col-form-label">qualification</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" type="file" id="formFile" name="qproof" value="{{data.doctor_qualification}}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Experience</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="experience"value="{{data.doctor_experience}}">
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">DateOfJoining</label>
+                  <div class="col-sm-10">
+                    <input type="date" class="form-control" name="joindate" value="{{data.DateOfJoining}}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">Status</label>
+                   <div class="col-sm-10">
+                    <select class="form-control" aria-label="Default select example" name="status"  value="{{data.doctor_Status}}">
+                      <option selected>select</option>
+                      <option value="Available">Available</option>
+                      <option value="NotAvailable">Not Available</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Salary</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="salary" value="{{data.doctor_salary}}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" name="password"  value="{{data.doctor_password}}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
+</body>
+</html>

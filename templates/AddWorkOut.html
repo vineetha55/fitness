@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'Trainersidebar.html' %}
+
+<main id="main" class="main">
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Workout DETAILS</h5>
+
+                        <!-- General Form Elements -->
+                        <form action="/SaveAddWorkOut/" method="POST" id="workoutForm">
+                            {% csrf_token %}
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label"> Member Name</label>
+                                    <div class="col-sm-10">
+                                <select class="form-control" aria-label="Default select example" name="name">
+                                        <option selected>select</option>
+                                  {% for i in data %}
+                                     <option value="{{i.memberid.id}}">{{i.memberid.first_name}}</option>
+                                  {% endfor %}
+                                    </select>
+                                    </div>
+                            </div>
+                          <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Month</label>
+                                  <div class="col-sm-10">
+                              <select class="form-control" aria-label="Default select example" name="month" id="month">
+                      <option selected>select</option>
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                                  <option value="March">March</option>
+                      <option value="April">April</option>
+                                  <option value="May">May</option>
+                      <option value="June">June</option>
+                                  <option value="July">July</option>
+                      <option value="August">August</option>
+                                  <option value="September">September</option>
+                      <option value="October">October</option>
+                                  <option value="November">November</option>
+                      <option value="December">December</option>
+
+                              </select></div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">workout type</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="type">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">week</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" aria-label="Default select example" name="week">
+                                        <option selected>select</option>
+                                        <option value="week1">week1</option>
+                                        <option value="week2">week2</option>
+                                        <option value="week3">week3</option>
+                                        <option value="week4">week4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Exercise Name</label>
+                                <div class="col-sm-10">
+                                    <div id="exerciseFields">
+                                        <input type="text" class="form-control" name="exc[]">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Repeats</label>
+                                <div class="col-sm-10">
+                                    <div id="repFields">
+                                        <input type="text" class="form-control" name="rep[]">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-10">
+                                    <button type="button" class="btn btn-primary" onclick="addExerciseField()">Add Exercise Field</button>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-10">
+                                            <button type="button" class="btn btn-primary" onclick="addRepField()">Add Repeat Field</button>
+
+                                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    function addExerciseField() {
+        // Get the parent element where we'll add the new input field
+        const exerciseFieldsContainer = document.getElementById("exerciseFields");
+
+        // Create a new input element for exercise name
+        const newExerciseField = document.createElement("input");
+        newExerciseField.setAttribute("type", "text");
+        newExerciseField.setAttribute("class", "form-control");
+        newExerciseField.setAttribute("name", "exc[]");
+
+        // Append the new input field to the container
+        exerciseFieldsContainer.appendChild(newExerciseField);
+
+
+
+    }
+
+      function addRepField() {
+        // Get the parent element where we'll add the new input field
+        const repFieldsContainer = document.getElementById("repFields");
+
+        // Create a new input element for repeats
+        const newRepField = document.createElement("input");
+        newRepField.setAttribute("type", "text");
+        newRepField.setAttribute("class", "form-control");
+        newRepField.setAttribute("name", "rep[]");
+
+        // Append the new input field to the container
+        repFieldsContainer.appendChild(newRepField);
+    }
+</script>
+
+</body>
+</html>

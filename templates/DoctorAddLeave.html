@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "adminsidebar.html"%}
+  <main id="main" class="main">
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"> Doctor Leave Details</h5>
+
+              <!-- General Form Elements -->
+              <form action="/DoctorSaveLeave/{{data.id}}" method="POST"enctype="multipart/form-data">{%csrf_token%}
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Doctor Name</label>
+                  <div class="col-sm-10">
+                      <input type="text" class="form-control" name="Name" value="{{data.doctor_Name}}">
+                    </div>
+                  </div>
+                 <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">Select Dates</label>
+                  <div class="col-sm-10">
+                    <input type="date" class="form-control" name="leave_date" id="date">
+                    <button type="button" id="button">Add Date</button>
+                  </div>
+                </div>
+                  <div class="row mb-3">
+                                        <label for="inputText" class="col-sm-2 col-form-label">Leave Dates</label>
+
+                  <div class="col-sm-10">
+
+   <div id="sample"></div>
+                </div>
+                  </div>
+
+
+                <div class="row mb-3">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary" id="finish">Submit Form</button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<div>
+
+  </main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+<script>
+   $('#button').click(function(){
+   datesArray=[];
+   v = $('#date').val();
+     $('#sample').append('<input name="dates" value="' + v + '">');
+      datesArray.push(v);
+
+
+   });
+</script>
+</body>
+</html>

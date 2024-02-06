@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'memberindex.html' %}
+<div class="main-panel">
+       <div class="content-wrapper">
+         <div class="row">
+           <div class=" grid-margin stretch-card">
+             <div class="card">
+               <div class="card-body">
+                 <h4 class="card-title">Daily Report</h4>
+                 <p class="card-description">
+
+                 </p>
+                 <div class="table-responsive">
+                   <table class="table">
+                     <thead>
+                       <tr>
+                           <th>Sl.No</th>
+                           <th>Date</th>
+                           <th> Total WorkOut</th>
+                           <th>Completed WorkOut</th>
+                           <th>Pending WorkOut</th>
+                           <th>Time Taken</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                     {% for i in data %}
+                       <tr>
+                         <td>{{forloop.counter}}</td>
+                           <td>{{i.Date}}</td>
+                         <td>{{i.Total_Workout}}</td>
+                         <td>{{i.Completed_Work_out}}</td>
+                            <td>{{i.Pending_Workout}}</td>
+                         <td>{{i.Total_Time_Taken}}</td>
+
+                       </tr>
+                     {% endfor %}
+                     </tbody>
+                   </table>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+
+</body>
+</html>

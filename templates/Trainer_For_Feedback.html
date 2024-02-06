@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% include 'memberindex.html' %}
+
+  <main id="main" class="main">
+    <section class="section">
+        {% if data %}
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Feedback For Trainer</h5>
+
+              <!-- General Form Elements -->
+              <form  action="/Save_trainer_feedback/{{data.id}}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Trainer Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="TName" value="{{data.trainer_Name}}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Your Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="YName">
+                  </div>
+                </div>
+
+                  <div class="row mb-3">
+                  <label for="inputFile" class="col-sm-2 col-form-label">Your Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="formfile" name="YEmail">
+                  </div>
+                </div>
+                  <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Rate your Overall Experience</label>
+                  <div class="col-sm-10">
+                    <select name="experience" class="form-control">
+                      <option>Excellent</option>
+                      <option>Good</option>
+                          <option>Average</option>
+                      <option>Poor</option>
+                    </select>
+                  </div>
+                </div>
+<div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Rate the behavior of the Trainer</label>
+                  <div class="col-sm-10">
+                    <select name="behavior" class="form-control">
+                      <option>Excellent</option>
+                      <option>Good</option>
+                          <option>Average</option>
+                      <option>Poor</option>
+                    </select>
+                  </div>
+                </div>
+<div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Rate the helpfulness of the trainer</label>
+                  <div class="col-sm-10">
+                    <select name="help" class="form-control">
+                      <option>Excellent</option>
+                      <option>Good</option>
+                          <option>Average</option>
+                      <option>Poor</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label for="inputNumber" class="col-sm-2 col-form-label">Additional comments</label>
+                  <div class="col-sm-10">
+                    <textarea rows="5" cols="10" class="form-control" name="comments"></textarea>
+                  </div>
+                </div>
+
+
+
+                  <div class="row mb-3">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+        {% else %}
+        <h1>Sorry, Please wait until the admin assign a trainer for you..</h1>
+        {% endif %}
+    </section>
+  </main>
+</body>
+</html>

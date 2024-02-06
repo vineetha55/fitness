@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'adminsidebar.html' %}
+<div class="main-panel">
+       <div class="content-wrapper">
+         <div class="row">
+           <div class=" grid-margin stretch-card">
+             <div class="card">
+               <div class="card-body">
+                 <h4 class="card-title">Trainer_Details</h4>
+                 <p class="card-description">
+
+                 </p>
+                 <div class="table-responsive">
+                   <table class="table">
+                     <thead>
+                       <tr>
+                           <th>member Id</th>
+                         <th>Name</th>
+                          <th> type </th>
+                          <th>exc name</th>
+                          <th> reps</th>
+                           <th> sets</th>
+
+                           <th>Action</th>
+                           <th>Action</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                     {% for i in data %}
+                       <tr>
+                         <td>{{forloop.counter}}</td>
+                         <td>{{i.membername}}</td>
+                         <td>{{i.wrktype}</td>
+                           <td>{{i.excname}}</td>
+                           <td>{{i.reps}}</td>
+                           <td>{{i.sets}}</td>
+
+                    <td><a href="/EditAddWorkOut/{{i.id}}">Edit</a></td>
+                    <td><a href="/DeleteAddWorkOut/{{i.id}}">Delete</a></td>
+
+                       </tr>
+                     {% endfor %}
+                     </tbody>
+                   </table>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+
+</body>
+</html>

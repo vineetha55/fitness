@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'adminsidebar.html' %}
+<div class="main-panel">
+       <div class="content-wrapper">
+         <div class="row">
+           <div class=" grid-margin stretch-card">
+             <div class="card">
+               <div class="card-body">
+                 <h4 class="card-title">Feedback</h4>
+                 <p class="card-description">
+
+                 </p>
+                   <a href="/generate_feedback_report/{{d.id}}" class="btn btn-info">Generate Report</a>
+                 <div class="table-responsive">
+                   <table class="table">
+                     <thead>
+                       <tr>
+                           <th>Id</th>
+                         <th>Trainer Name</th>
+                          <th> Member Name </th>
+                          <th>Member Email</th>
+                          <th> Overall Experience</th>
+                           <th> behavior of Trainer</th>
+                           <th> Helpfulness</th>
+                           <th> Comments</th>
+
+                        </tr>
+                     </thead>
+                     <tbody>
+                     {% for i in data %}
+                       <tr>
+                         <td>{{forloop.counter}}</td>
+                         <td>{{i.Trainer_id.trainer_Name}}</td>
+                         <td>{{i.memberid.first_name}}</td>
+                           <td>{{i.memberemail}}</td>
+                           <td>{{i.overall_exp}}</td>
+                           <td>{{i.behavior}}</td>
+                           <td>{{i.helpfulness}}</td>
+                           <td>{{i.comments}}</td>
+                       </tr>
+                     {% endfor %}
+                     </tbody>
+                   </table>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+</body>
+</html>

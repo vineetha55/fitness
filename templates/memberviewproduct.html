@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'memberindex.html' %}
+
+<div class="container" style="margin-top:10px;">
+
+    {% for i in data1 %}
+    <a class="btn btn-success" href="/filter_by_category/{{i.id}}">{{i.product_category}}</a>
+    {% endfor %}
+    <div class="row">
+{% if data2 %}
+        {% for i in data2 %}
+        <div class="col-sm-4">
+            <br>
+
+            <div class="card" style="width: 18rem;">
+  <img src="{{i.product_images }}" class="card-img-top" alt="..." width="200" height="200">
+  <div class="card-body">
+
+      <h3 class="card-title">{{i.product_name}}</h3>
+      <h6 class="card-title">Details:{{i.product_details}}</h6>
+
+      <h5 class="card-title">Total Price:{{i.product_totalprice}}</h5>
+      <h5 class="card-title">{{i.product_status}}</h5>
+    <a href="/SaveCart/{{i.id}}" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+        </div>
+
+            {%endfor %}
+        {% else %}
+        {% for i in data %}
+        <div class="col-sm-4">
+            <br>
+
+            <div class="card" style="width: 18rem;">
+  <img src="{{i.product_images }}" class="card-img-top" alt="..." width="200" height="200">
+  <div class="card-body">
+
+      <h3 class="card-title">{{i.product_name}}</h3>
+      <h6 class="card-title">Details:{{i.product_details}}</h6>
+
+      <h5 class="card-title">Total Price:{{i.product_totalprice}}</h5>
+      <h5 class="card-title">{{i.product_status}}</h5>
+    <a href="/SaveCart/{{i.id}}" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+        </div>
+
+            {%endfor %}
+{% endif %}
+    </div>
+</div>
+</body>
+</html>
+
+

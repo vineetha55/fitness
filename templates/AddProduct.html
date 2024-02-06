@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'adminsidebar.html' %}
+
+  <main id="main" class="main">
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Product Details</h5>
+
+              <!-- General Form Elements -->
+              <form  action="/SaveProduct/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                 <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">Category</label>
+                   <div class="col-sm-10">
+                    <select class="form-control" aria-label="Default select example" name="Category">
+                      <option selected>select</option>
+                      {% for i in a %}
+
+                      <option value="{{i.id}}">{{i.product_category}}</option>
+                     {% endfor %}
+                    </select>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="Name">
+                  </div>
+                </div>
+
+                  <div class="row mb-3">
+                  <label for="inputFile" class="col-sm-2 col-form-label">Images</label>
+                  <div class="col-sm-10">
+                    <input type="file" class="form-control" id="formfile" name="Images">
+                  </div>
+                </div>
+                  <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Details</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="Details">
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label for="inputNumber" class="col-sm-2 col-form-label">Gst</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control" name="gst">
+                  </div>
+                </div>
+
+                  <div class="row mb-3">
+                  <label for="inputNumber" class="col-sm-2 col-form-label">Total Price</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control" name="total">
+                  </div>
+                </div>
+
+                  <div class="row mb-3">
+                       <label for="inputText" class="col-sm-2 col-form-label">Status</label>
+                   <div class="col-sm-10">
+                    <select class="form-control" aria-label="Default select example" name="status">
+                      <option selected>select</option>
+                      <option value="Available">Available</option>
+                      <option value="NotAvailable">Not Available</option>
+                    </select>
+                  </div>
+                </div>
+                  <div class="row mb-3">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
+</body>
+</html>
+
+</body>
+</html>
