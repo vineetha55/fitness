@@ -23,15 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-q(nczaujva+=db+!a@ukwvx5=csbw&o^a2r7z0t0wtbj%3u!06'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = ['https://vineethaM.pythonanywhere.com/']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'captcha',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
